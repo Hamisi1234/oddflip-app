@@ -1,0 +1,121 @@
+import 'models.dart';
+
+const mockLiveFixtures = <LiveFixture>[
+  LiveFixture(
+    id: 'demo-arsenal-liverpool',
+    league: League(id: 'pl', name: 'Premier League', country: 'England'),
+    status: 'live',
+    minute: 67,
+    venue: 'Emirates Stadium',
+    hasTimeline: true,
+    home: TeamScore(id: 'arsenal', name: 'Arsenal', logo: '', goals: 1),
+    away: TeamScore(id: 'liverpool', name: 'Liverpool', logo: '', goals: 1),
+  ),
+  LiveFixture(
+    id: 'demo-real-city',
+    league: League(id: 'ucl', name: 'UEFA Champions League', country: 'Europe'),
+    status: 'live',
+    minute: 72,
+    venue: 'Santiago Bernabeu',
+    hasTimeline: true,
+    home: TeamScore(id: 'real', name: 'Real Madrid', logo: '', goals: 2),
+    away: TeamScore(id: 'city', name: 'Manchester City', logo: '', goals: 2),
+  ),
+  LiveFixture(
+    id: 'demo-barcelona-atletico',
+    league: League(id: 'laliga', name: 'La Liga', country: 'Spain'),
+    status: 'live',
+    minute: 39,
+    venue: 'Estadi Olimpic',
+    hasTimeline: true,
+    home: TeamScore(id: 'barcelona', name: 'Barcelona', logo: '', goals: 1),
+    away:
+        TeamScore(id: 'atletico', name: 'Atletico Madrid', logo: '', goals: 0),
+  ),
+  LiveFixture(
+    id: 'demo-inter-napoli',
+    league: League(id: 'serie-a', name: 'Serie A', country: 'Italy'),
+    status: 'live',
+    minute: 54,
+    venue: 'San Siro',
+    hasTimeline: true,
+    home: TeamScore(id: 'inter', name: 'Inter', logo: '', goals: 0),
+    away: TeamScore(id: 'napoli', name: 'Napoli', logo: '', goals: 0),
+  ),
+];
+
+const _demoEvents = <String, List<MatchEvent>>{
+  'demo-arsenal-liverpool': [
+    MatchEvent(
+      fingerprint: 'demo-arsenal-goal-1',
+      fixtureId: 'demo-arsenal-liverpool',
+      minute: 23,
+      type: 'goal',
+      detail: 'Goal',
+      teamName: 'Arsenal',
+      playerName: 'Bukayo Saka',
+      comments: null,
+      isRedCard: false,
+    ),
+    MatchEvent(
+      fingerprint: 'demo-liverpool-goal-1',
+      fixtureId: 'demo-arsenal-liverpool',
+      minute: 41,
+      type: 'goal',
+      detail: 'Goal',
+      teamName: 'Liverpool',
+      playerName: 'Mohamed Salah',
+      comments: null,
+      isRedCard: false,
+    ),
+    MatchEvent(
+      fingerprint: 'demo-saliba-red',
+      fixtureId: 'demo-arsenal-liverpool',
+      minute: 58,
+      type: 'card',
+      detail: 'Red card',
+      teamName: 'Arsenal',
+      playerName: 'William Saliba',
+      comments: 'Professional foul',
+      isRedCard: true,
+    ),
+    MatchEvent(
+      fingerprint: 'demo-arsenal-sub',
+      fixtureId: 'demo-arsenal-liverpool',
+      minute: 62,
+      type: 'substitution',
+      detail: 'Substitution',
+      teamName: 'Arsenal',
+      playerName: 'Takehiro Tomiyasu',
+      comments: 'Defensive change',
+      isRedCard: false,
+    ),
+    MatchEvent(
+      fingerprint: 'demo-liverpool-yellow',
+      fixtureId: 'demo-arsenal-liverpool',
+      minute: 66,
+      type: 'card',
+      detail: 'Yellow card',
+      teamName: 'Liverpool',
+      playerName: 'Alexis Mac Allister',
+      comments: null,
+      isRedCard: false,
+    ),
+  ],
+  'demo-real-city': [
+    MatchEvent(
+      fingerprint: 'demo-city-red',
+      fixtureId: 'demo-real-city',
+      minute: 64,
+      type: 'card',
+      detail: 'Red card',
+      teamName: 'Manchester City',
+      playerName: 'Ruben Dias',
+      comments: 'Second yellow card',
+      isRedCard: true,
+    ),
+  ],
+};
+
+List<MatchEvent> mockEventsFor(String fixtureId) =>
+    _demoEvents[fixtureId] ?? const [];

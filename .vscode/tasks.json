@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "OddFlip Flutter Tests",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/C",
+				"cd /d \"C:\\xampp\\htdocs\\Red Card Alert App Design\\flutter_app\" & C:\\src\\flutter\\bin\\flutter.bat test"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "OddFlip Flutter Analyze",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/C",
+				"cd /d \"C:\\xampp\\htdocs\\Red Card Alert App Design\\flutter_app\" & C:\\src\\flutter\\bin\\flutter.bat analyze lib"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Receive instant alerts for red cards in live football matches with customizable notifications, ensuring fans never miss critical moments.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
